@@ -50,7 +50,7 @@ class GPHomeViewModel: GPObservableViewModelProtocol {
             return self.getPersistedCoins()
         }
         
-        let marketPublisher = Publishers.CombineLatest(didLoad, persistedCoinPublisher)
+        let marketPublisher = Publishers.Zip(didLoad, persistedCoinPublisher)
             .flatMap { [weak self] (isFirstTime, persistedCoins) -> AnyPublisher<[GPMarket], Never> in
                 guard let self = self else {
                     return Empty(completeImmediately: false).eraseToAnyPublisher()
