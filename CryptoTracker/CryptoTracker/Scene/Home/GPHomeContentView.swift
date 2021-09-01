@@ -20,7 +20,6 @@ struct GPHomeContentView<ViewModel>: View where ViewModel: GPHomeViewModel {
         GridItem(.flexible()),
     ]
 
-    private let btnCoinSelect = PassthroughSubject<String, Never>()
     private let didLoad = PassthroughSubject<Bool, Never>()
     private let output: ViewModel.Output
     var body: some View {
@@ -30,7 +29,6 @@ struct GPHomeContentView<ViewModel>: View where ViewModel: GPHomeViewModel {
                     ForEach(viewModel.market, id: \.id) { market in
 
                         Button(action: {
-                            btnCoinSelect.send("")
                             router.route(to: .detail(marketID: market.id, title: market.name, subtitle: market.symbol))
                         }, label: {
                             let color: Color = market.priceChange24h.sign == .minus ? .red : .green
@@ -53,6 +51,7 @@ struct GPHomeContentView<ViewModel>: View where ViewModel: GPHomeViewModel {
         }.navigationTitle("Cypto Price Tracker")
         .navigationBarTitleDisplayMode(.automatic)
         .onAppear(perform: {
+            print("")
             didLoad.send(GPAppManager.defaultManager.isFirstTime)
         }).onReceive(output.didLoadMarket, perform: { market in
             GPAppManager.defaultManager.isFirstTime = false
@@ -63,8 +62,7 @@ struct GPHomeContentView<ViewModel>: View where ViewModel: GPHomeViewModel {
     
     init() {
         let homeViewModel = GPHomeViewModel() as! ViewModel
-        let input = GPHomeViewModel.Input(didLoad: didLoad.eraseToAnyPublisher(),
-                                          didSelectCoin: btnCoinSelect.eraseToAnyPublisher())
+        let input = GPHomeViewModel.Input(didLoad: didLoad.eraseToAnyPublisher())
         output = homeViewModel.bind(input)
         viewModel = homeViewModel
     }

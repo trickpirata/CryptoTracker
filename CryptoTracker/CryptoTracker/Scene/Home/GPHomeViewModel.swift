@@ -14,7 +14,6 @@ import CryptoTrackerStorage
 class GPHomeViewModel: GPObservableViewModelProtocol {
     struct Input {
         var didLoad: AnyPublisher<Bool, Never>
-        var didSelectCoin: AnyPublisher<String, Never>
     }
 
     struct Output {
