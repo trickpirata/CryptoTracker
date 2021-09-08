@@ -90,7 +90,7 @@ class GPHomeViewModel: GPObservableViewModelProtocol {
         return output
     }
     
-    private func getDefaultCoins() -> [GPCoin] {
+    func getDefaultCoins() -> [GPCoin] {
         var coins = [GPCoin]()
         guard let path = Bundle.main.path(forResource: "CoinsDefault", ofType: "plist"),
               let data = FileManager.default.contents(atPath: path) else {
@@ -105,7 +105,6 @@ class GPHomeViewModel: GPObservableViewModelProtocol {
         }
         
         if coins.count > 0 {
-            
             persistenceService.save(objects: coins).sink { _ in
                 print("coins persisted")
             }.store(in: &cancelBag)
@@ -114,13 +113,13 @@ class GPHomeViewModel: GPObservableViewModelProtocol {
         return coins
     }
     
-    private func getPersistedCoins() -> AnyPublisher<[GPCoin], Never> {
+    func getPersistedCoins() -> AnyPublisher<[GPCoin], Never> {
         return persistenceService.get(at: GPCoinPersistenceRequest.allCoins)
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
     
-    private func getCoinMarket(forIDs ids: String) -> AnyPublisher<[GPMarket], Never> {
+    func getCoinMarket(forIDs ids: String) -> AnyPublisher<[GPMarket], Never> {
         isLoading = true
         return service.getMarket(forCurrency: "USD", andIDs: ids, inPage: 1)
             .catch { [weak self] error -> Empty<[GPMarket], Never> in

@@ -10,4 +10,8 @@ import Foundation
 
 public struct GPCoinChart: Codable {
     public let prices: [[Double]]
+    
+    public init(prices: [[Double]]) {
+        self.prices = prices
+    }
 }

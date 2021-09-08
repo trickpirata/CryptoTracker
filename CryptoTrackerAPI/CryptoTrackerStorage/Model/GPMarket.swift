@@ -92,7 +92,7 @@ public class GPMarket: Codable {
         return GPMarket(id: "")
     }
     
-    init(id: String,
+    public init(id: String,
          symbol: String = "",
          name: String = "",
          image: String = "",

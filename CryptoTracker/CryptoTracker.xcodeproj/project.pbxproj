@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B006711326DF1E39008AB38E /* GPCoinPersistenceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B006711226DF1E39008AB38E /* GPCoinPersistenceRequest.swift */; };
+		B0932F2D26E8D91B00BDE3D3 /* GPMockCoinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0932F2C26E8D91B00BDE3D3 /* GPMockCoinService.swift */; };
 		B0B6AFF426DD8E400056B9A2 /* GPHomeDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6AFF326DD8E400056B9A2 /* GPHomeDetailContentView.swift */; };
 		B0B6AFF626DD8E4C0056B9A2 /* GPHomeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6AFF526DD8E4C0056B9A2 /* GPHomeDetailViewModel.swift */; };
 		B0B6AFF926DD915F0056B9A2 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = B0B6AFF826DD915F0056B9A2 /* SwiftUICharts */; };
@@ -17,7 +18,7 @@
 		B0C955C926DC3C6100728D3C /* CryptoTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C955C826DC3C6100728D3C /* CryptoTrackerApp.swift */; };
 		B0C955CD26DC3C6100728D3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C955CC26DC3C6100728D3C /* Assets.xcassets */; };
 		B0C955D026DC3C6100728D3C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C955CF26DC3C6100728D3C /* Preview Assets.xcassets */; };
-		B0C955DB26DC3C6200728D3C /* CryptoTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C955DA26DC3C6200728D3C /* CryptoTrackerTests.swift */; };
+		B0C955DB26DC3C6200728D3C /* GPHomeContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C955DA26DC3C6200728D3C /* GPHomeContentTests.swift */; };
 		B0C955E626DC3C6200728D3C /* CryptoTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C955E526DC3C6200728D3C /* CryptoTrackerUITests.swift */; };
 		B0C9562326DC45C400728D3C /* Stinsen in Frameworks */ = {isa = PBXBuildFile; productRef = B0C9562226DC45C400728D3C /* Stinsen */; };
 		B0C9562626DC45F300728D3C /* ActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = B0C9562526DC45F300728D3C /* ActivityIndicatorView */; };
@@ -76,6 +77,7 @@
 
 /* Begin PBXFileReference section */
 		B006711226DF1E39008AB38E /* GPCoinPersistenceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPCoinPersistenceRequest.swift; sourceTree = "<group>"; };
+		B0932F2C26E8D91B00BDE3D3 /* GPMockCoinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPMockCoinService.swift; sourceTree = "<group>"; };
 		B0B6AFF326DD8E400056B9A2 /* GPHomeDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPHomeDetailContentView.swift; sourceTree = "<group>"; };
 		B0B6AFF526DD8E4C0056B9A2 /* GPHomeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPHomeDetailViewModel.swift; sourceTree = "<group>"; };
 		B0B6AFFA26DD96930056B9A2 /* GPCoinSettingSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPCoinSettingSwitchView.swift; sourceTree = "<group>"; };
@@ -87,7 +89,7 @@
 		B0C955CF26DC3C6100728D3C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B0C955D126DC3C6100728D3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0C955D626DC3C6200728D3C /* CryptoTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0C955DA26DC3C6200728D3C /* CryptoTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerTests.swift; sourceTree = "<group>"; };
+		B0C955DA26DC3C6200728D3C /* GPHomeContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPHomeContentTests.swift; sourceTree = "<group>"; };
 		B0C955DC26DC3C6200728D3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0C955E126DC3C6200728D3C /* CryptoTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C955E526DC3C6200728D3C /* CryptoTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerUITests.swift; sourceTree = "<group>"; };
@@ -141,6 +143,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B0932F2B26E8D90C00BDE3D3 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				B0932F2C26E8D91B00BDE3D3 /* GPMockCoinService.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		B0B6AFF226DD8E2D0056B9A2 /* HomeDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,7 +218,8 @@
 		B0C955D926DC3C6200728D3C /* CryptoTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
-				B0C955DA26DC3C6200728D3C /* CryptoTrackerTests.swift */,
+				B0932F2B26E8D90C00BDE3D3 /* Mocks */,
+				B0C955DA26DC3C6200728D3C /* GPHomeContentTests.swift */,
 				B0C955DC26DC3C6200728D3C /* Info.plist */,
 			);
 			path = CryptoTrackerTests;
@@ -488,7 +499,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0C955DB26DC3C6200728D3C /* CryptoTrackerTests.swift in Sources */,
+				B0932F2D26E8D91B00BDE3D3 /* GPMockCoinService.swift in Sources */,
+				B0C955DB26DC3C6200728D3C /* GPHomeContentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
